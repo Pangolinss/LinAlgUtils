@@ -75,7 +75,7 @@ class SylvSolverDense{
         }
         Eigen::Map<Eigen::Matrix<typename MatrixA::Scalar, -1, 1>>(sol.block(0, k-1, sol.rows(), 2).data(), sol.rows()*2) = 
           D.partialPivLu().solve(Eigen::Map<Eigen::Matrix<typename MatrixC::Scalar, -1, 1>>(fk1fk.data(), fk1fk.size()));
-        std::cout<<sol.block(0, k-1, sol.rows(), 2)<<std::endl<<std::endl;
+
         k-=2;
       }
     }
